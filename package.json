@@ -1,0 +1,57 @@
+{
+  "name": "@jdists/pug",
+  "version": "0.0.1",
+  "description": "pug as jdists processor",
+  "main": "lib/index",
+  "typings": "lib/index.d.ts",
+  "keywords": [
+    "jdists",
+    "processor",
+    "pug"
+  ],
+  "scripts": {
+    "_update_version": "node version.js",
+    "_dist": "gulp dist",
+    "test": "istanbul cover --hook-run-in-context node_modules/mocha/bin/_mocha -- -R spec",
+    "example": "gulp example",
+    "mocha": "mocha",
+    "dist": "npm run _update_version && npm run _dist && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdists/pug.git"
+  },
+  "author": {
+    "name": "zswang",
+    "url": "http://weibo.com/zswang"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdists/pug/issues"
+  },
+  "homepage": "https://github.com/jdists/pug#readme",
+  "dependencies": {
+    "@types/pug": "^2.0.4",
+    "pug": "^2.0.0-rc.4",
+    "js-yaml": "^3.10.0"
+  },
+  "devDependencies": {
+    "@types/pug": "^2.3.33",
+    "@types/node": "^8.0.33",
+    "gulp": "^3.9.1",
+    "gulp-examplpug": "0.0.9",
+    "gulp-jdists": "^2.0.17",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^3.1.6",
+    "istanbul": "^0.3.17",
+    "jdists-util": "^0.0.7",
+    "merge2": "^1.1.0",
+    "mocha": "^2.0.1",
+    "should": "^4.1.0",
+    "typescript": "^2.0.3"
+  },
+  "files": [
+    "lib"
+  ]
+}
