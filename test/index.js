@@ -55,13 +55,8 @@ describe("src/index.ts", function () {
           
   it("processor():data is undefined", function () {
     examplejs_printLines = [];
-  let attrs = {
-  }
-  let scope = {
-    execImport: function (importion) {
-      return importion
-    },
-  }
+  let attrs = {}
+  let scope = {}
   examplejs_print(JSON.stringify(processor(`
     b #{1 + 2}
   `, attrs, scope)))
@@ -70,10 +65,8 @@ describe("src/index.ts", function () {
           
   it("processor():content is null", function () {
     examplejs_printLines = [];
-  let attrs = {
-  }
-  let scope = {
-  }
+  let attrs = {}
+  let scope = {}
   examplejs_print(processor(null, attrs, scope))
   assert.equal(examplejs_printLines.join("\n"), "null"); examplejs_printLines = [];
   });

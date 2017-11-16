@@ -13,7 +13,6 @@ interface IPugAttrs extends jdistsUtil.IAttrs {
  * @param content 文本内容
  * @param attrs 属性
  * @param attrs.data 数据项，支持 JSON 和 YAML
- * @param attrs.rework 是否重新编译
  * @param scope 作用域
  * @param scope.execImport 导入数据
  * @return 返回渲染后的结果
@@ -57,13 +56,8 @@ interface IPugAttrs extends jdistsUtil.IAttrs {
   ```
  * @example processor():data is undefined
   ```js
-  let attrs = {
-  }
-  let scope = {
-    execImport: function (importion) {
-      return importion
-    },
-  }
+  let attrs = {}
+  let scope = {}
   console.log(JSON.stringify(processor(`
     b #{1 + 2}
   `, attrs, scope)))
@@ -71,10 +65,8 @@ interface IPugAttrs extends jdistsUtil.IAttrs {
   ```
  * @example processor():content is null
   ```js
-  let attrs = {
-  }
-  let scope = {
-  }
+  let attrs = {}
+  let scope = {}
   console.log(processor(null, attrs, scope))
   // > null
   ```
