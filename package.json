@@ -1,6 +1,6 @@
 {
   "name": "@jdists/pug",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "pug as jdists processor",
   "main": "lib/index",
   "typings": "lib/index.d.ts",
@@ -37,10 +37,10 @@
     "js-yaml": "^3.10.0"
   },
   "devDependencies": {
-    "@types/pug": "^2.3.33",
     "@types/node": "^8.0.33",
+    "@types/pug": "^2.0.4",
     "gulp": "^3.9.1",
-    "gulp-examplpug": "0.0.9",
+    "gulp-examplejs": "^0.0.9",
     "gulp-jdists": "^2.0.17",
     "gulp-rename": "^1.2.2",
     "gulp-typescript": "^3.1.6",
