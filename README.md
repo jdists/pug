@@ -8,6 +8,30 @@ pug as jdists processor
 
 * @see [pug](https://github.com/pugjs/pug)
 
+## Example
+
+```html
+<!--data>
+kids:
+  - name: Jimmy
+    age: '12'
+  - name: Sally
+    age: '4'
+</data-->
+
+<!--jdists encoding="pug" data="?data"-->
+ul
+  each item in kids
+    li= item.name + '-' + item.age
+<!--/jdists-->
+
+<!--pug data="?data"-->
+ul
+  each item in kids
+    li= item.name + '-' + item.age
+<!--/pug-->
+```
+
 ## License
 
 MIT © [zswang](http://weibo.com/zswang)
