@@ -1,6 +1,6 @@
 {
   "name": "@jdists/pug",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "pug as jdists processor",
   "main": "lib/index",
   "typings": "lib/index.d.ts",
@@ -33,8 +33,7 @@
   "homepage": "https://github.com/jdists/pug#readme",
   "dependencies": {
     "pug": "^2.0.0-rc.4",
-    "jdists-util": "^0.0.7",
-    "js-yaml": "^3.10.0"
+    "jdists-util": "^0.1.2"
   },
   "devDependencies": {
     "@types/node": "^8.0.33",

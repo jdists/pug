@@ -1,6 +1,5 @@
 import * as pug from 'pug'
 import * as jdistsUtil from 'jdists-util'
-import * as jsyaml from 'js-yaml'
 
 interface IPugAttrs extends jdistsUtil.IAttrs {
   /**
@@ -25,27 +24,6 @@ interface IPugAttrs extends jdistsUtil.IAttrs {
   }
   let scope = {
     execImport: function (importion) {
-      return `
-        name: tom
-        age: 13
-      `
-    },
-  }
-  console.log(JSON.stringify(processor(`
-    b #{name} - #{age}
-  `, attrs, scope)))
-  // > "    <b>tom - 13</b>"
-
-  console.log(JSON.stringify(processor(`b #{name} - #{age}`, attrs, scope)))
-  // > "<b>tom - 13</b>"
-  ```
- * @example processor():execImport is object
-  ```js
-  let attrs = {
-    data: '#name',
-  }
-  let scope = {
-    execImport: function (importion) {
       return {
         name: 'tom',
         age: 13,
@@ -56,6 +34,9 @@ interface IPugAttrs extends jdistsUtil.IAttrs {
     b #{name} - #{age}
   `, attrs, scope)))
   // > "    <b>tom - 13</b>"
+
+  console.log(JSON.stringify(processor(`b #{name} - #{age}`, attrs, scope)))
+  // > "<b>tom - 13</b>"
   ```
  * @example processor():data is undefined
   ```js
@@ -91,9 +72,6 @@ export = (function (content: string, attrs: IPugAttrs, scope: jdistsUtil.IScope)
   let data = null
   if (attrs.data) {
     data = scope.execImport(attrs.data)
-    if (typeof data === 'string') {
-      data = jsyaml.safeLoad(data)
-    }
   }
   content = render(data)
   if (space) { // 需要补空白
